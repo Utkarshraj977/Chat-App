@@ -10,12 +10,12 @@ const io = new Server(server,{
         origin:'*',
     }
 });
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4600;
 io.on('connection', (socket) => {
-  console.log('a user connected',socket.id);
+  //console.log('a user connected',socket.id);
 
   socket.on('joinRoom',async (username)=>{
-    console.log(`${username} is joining the chat.`);
+    //console.log(`${username} is joining the chat.`);
     await socket.join(ROOM);
     //for sending all members of room includes joiner
    // io.to(ROOM).emit('roomNotice',username)
